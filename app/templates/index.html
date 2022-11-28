@@ -55,9 +55,11 @@
     <script src="{{ url_for('static', filename='skeleton/Chart.js/Chart.bundle.min.js') }}"></script>
     <script src="{{ url_for('static', filename='skeleton/Chart.js/Chart.bundle.js') }}"></script>
     <script src="{{ url_for('static', filename='skeleton/Chart.js/Chart.js') }}"></script>
+
+    
   
 </head>
-<body style="background-color: #2980b9;">
+<body onload="nobackbutton();">
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -72,9 +74,9 @@
     <ul class="nav navbar-nav">
       {% if user.is_authenticated %}
       
-      <li class="active"><a href="/projects"><span class="glyphicon glyphicon-certificate" aria-hidden="true"></span> Proyectos</a></li>
-      <li class="active"><a href="/documents"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Documentos</a></li>
-      {% if user.name == "root" %}
+      <li class="active"><a href="/projects"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Proyectos</a></li>
+      <li class="active"><a href="/documents"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Documentos</a></li>
+      {% if user.name == "Administrador" %}
       <li class="active"><a href="/usuarios"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Usuarios</a></li>
       {% endif %}
 
@@ -82,11 +84,12 @@
     
     <ul class="nav navbar-nav">
       <li><a href="/about"><span class="glyphicon glyphicon-info-sign"></span> Acerca de...</a></li>
+      <li><a href="/how-to"><span class="glyphicon glyphicon-book"></span> Documentación</a></li>
     </ul>
     
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="static/uploads/{{ user.avatar }}" alt="user" class="avatar"> {{ user.name }}
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="static/avatars/{{ user.avatar }}" alt="user" class="avatar"> {{ user.name }}
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="/avatar/{{ user.id }}"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Cambiar Avatar</a></li>
@@ -129,6 +132,8 @@
 <div class="container-fluid">
   {% block content %}{% endblock %}
 </div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='skeleton/js/app.js') }}"></script>
 
 </body>
 </html>

@@ -4,10 +4,27 @@ from sqlalchemy.sql import func
 import datetime
 
 class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(150))
-    user = db.Column(db.String(150))
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(150), unique=True)
+    user = db.Column(db.String(150), unique=True)
     email = db.Column(db.String(150))
     password = db.Column(db.String(150))
     avatar = db.Column(db.String(150))
     role = db.Column(db.Integer)
+
+
+class Projects(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    project_name = db.Column(db.String(300), unique=True, nullable=False)
+    objetives = db.Column(db.String(500), unique=True, nullable=False)
+
+
+class Details(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id_project = db.Column(db.Integer, nullable=False)
+    leader = db.Column(db.String(100), nullable=False)
+    contributor = db.Column(db.String(100), nullable=False)
+    task_detail = db.Column(db.String(500), nullable=False)
+    main_activity = db.Column(db.String(500), nullable=False)
+    results = db.Column(db.String(500), nullable=False)
+    progress_indicator = db.Column(db.Float, nullable=True)

@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% block title %}Collaborative Words - Nuevo Proyecto{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="jumbotron">
+    <h1><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar Proyecto</h1><hr>      
+    <p>Complete los datos solicitados </p><hr>
+    
+     <form method="POST">
+      <div class="form-group">
+        <label for="project_name">Nombre del Proyecto:</label>
+        <input type="text" class="form-control" id="project_name" name="project_name" placeholder="Ingrese el nombre o descripción del proyecto">
+      </div>
+      <div class="form-group">
+        <label for="objetives">Objetivos:</label>
+        <textarea class="form-control" rows="5" id="objetives" name="objetives" placeholder="Ingrese los objetivos del Proyecto"></textarea>
+      </div> 
+      
+      <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+    </form> 
+  
+  </div>
+        
+</div>
+
+
+{% endblock %}

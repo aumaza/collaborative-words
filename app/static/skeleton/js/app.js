@@ -15,19 +15,19 @@
             
             {
                 extend: 'excel',
-                text: 'Export Excel',
+                text: 'Exportar Excel',
                 messageTop: 'Listado de Usuarios',
                 exportOptions: { columns: ':visible',}
             },
             {
                 extend: 'csv',
-                text: 'Export CSV',
+                text: 'Exportar CSV',
                 messageTop: 'Listado de Usuarios',
                 exportOptions: { columns: ':visible',}
             },
             {
                 extend: 'pdf',
-                text: 'Export PDF',
+                text: 'Exportar PDF',
                 messageTop: 'Listado de Usuarios',
                 exportOptions: { columns: ':visible',}
             },
@@ -81,7 +81,7 @@
 
  $(document).ready(function(){
       
-      $('#servicesTable').DataTable({
+      $('#projectsTable').DataTable({
         "order": [[0, "asc"]],
         "responsive":     true,
         "scrollY":        "300px",
@@ -94,20 +94,20 @@
             
             {
                 extend: 'excel',
-                text: 'Export Excel',
-                messageTop: 'Listado de Servicios',
+                text: 'Exportar Excel',
+                messageTop: 'Listado de Proyectos',
                 exportOptions: { columns: ':visible',}
             },
             {
                 extend: 'csv',
-                text: 'Export CSV',
-                messageTop: 'Listado de Servicios',
+                text: 'Exportar CSV',
+                messageTop: 'Listado de Proyectos',
                 exportOptions: { columns: ':visible',}
             },
             {
                 extend: 'pdf',
-                text: 'Export PDF',
-                messageTop: 'Listado de Servicios',
+                text: 'Exportar PDF',
+                messageTop: 'Listado de Proyectos',
                 exportOptions: { columns: ':visible',}
             },
             {
@@ -122,7 +122,7 @@
                         .addClass( 'compact' )
                         .css( 'font-size', 'inherit' );
                 },
-                messageTop: 'Listado de Servicios',
+                messageTop: 'Listado de Proyectos',
                 autoPrint: false,
                 exportOptions: {
                     columns: ':visible',
@@ -160,7 +160,7 @@
 
  $(document).ready(function(){
       
-      $('#paymentTable').DataTable({
+      $('#detailsTable').DataTable({
         "order": [[0, "asc"]],
         "responsive":     true,
         "scrollY":        "300px",
@@ -173,20 +173,20 @@
             
             {
                 extend: 'excel',
-                text: 'Export Excel',
-                messageTop: 'Listado de Pagos',
+                text: 'Exportar Excel',
+                messageTop: 'Listado de Detalles de Proyecto',
                 exportOptions: { columns: ':visible',}
             },
             {
                 extend: 'csv',
-                text: 'Export CSV',
-                messageTop: 'Listado de Pagos',
+                text: 'Exportar CSV',
+                messageTop: 'Listado de Detalles de Proyecto',
                 exportOptions: { columns: ':visible',}
             },
             {
                 extend: 'pdf',
-                text: 'Export PDF',
-                messageTop: 'Listado de Pagos',
+                text: 'Exportar PDF',
+                messageTop: 'Listado de Detalles de Proyecto',
                 exportOptions: { columns: ':visible',}
             },
             {
@@ -201,7 +201,7 @@
                         .addClass( 'compact' )
                         .css( 'font-size', 'inherit' );
                 },
-                messageTop: 'Listado de Pagos',
+                messageTop: 'Listado de Detalles de Proyecto',
                 autoPrint: false,
                 exportOptions: {
                     columns: ':visible',

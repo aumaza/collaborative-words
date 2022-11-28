@@ -1,0 +1,28 @@
+table usuarios
+---------------------------------------------------
++ id 					integer auto_increment PK
++ name					text(100) not null
++ user					text(100) not null
++ password				text(74) not null
++ email					text(100) not null
++ role					integer not null
++ avatar				text(100) null
+
+
+table projects
+---------------------------------------------------
++ id					integer auto_increment PK
++ project_name			text(300) not null
++ objetives				text(500) not null
+
+
+table project_details
+---------------------------------------------------
++ id					integer auto_increment PK
++ id_project			integer not null
++ leader				text(100) not null
++ contributor			text(100) not null
++ task_detail			text(300) not null
++ main_activity			text(300) not null
++ results				text(300) not null
++ progress_indicator	real      not null
