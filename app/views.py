@@ -4,16 +4,16 @@ from werkzeug.security import generate_password_hash
 from werkzeug.utils import secure_filename
 from markupsafe import escape
 from os.path import join, dirname, realpath
+from datetime import datetime
 import imghdr
 import os
 from . import db
 import json
-import datetime
 import shutil
 
 
 views = Blueprint('views', '__name__')
-from .models import User, Projects, Details
+from .models import User, Projects, Details, Documents
 
 @views.route('/')
 @login_required
@@ -53,6 +53,15 @@ def details(id):
     details = Details.query.filter_by(id_project=id)
     count = Details.query.count()
     return render_template('details.html', project=project, details=details, count=count, user=current_user)
+
+
+@views.route('/documents')
+@login_required
+def documents():
+    documents = Documents.query
+    count = Documents.query.count()
+
+    return render_template('documents.html', count=count, documents=documents, user=current_user)
 
 
 
@@ -106,6 +115,31 @@ def new_details(id):
             return redirect(url_for('views.projects'))
 
     return render_template('add_details.html', project=project, user=current_user)
+
+
+@views.route('/new_document/<string:name>', methods=['GET', 'POST'])
+@login_required
+def new_document(name):
+
+    if request.method == 'POST':
+        document = request.form.get('document')
+        document_title = request.form.get('document_title')
+        now = datetime.now()
+        separator = '/'
+        actual_date = f'{now.year}{separator}{now.month}{separator}{now.day}'
+        print(actual_date)
+
+        if len(document) == 0 or len(document_title) == 0:
+            flash('No ha ingresado contenido a su documento o No ha dado Nombre a su Documento!', category='error')
+        else:
+            new_document = Documents(document_title = document_title, user_creator = name, document = document, date_creation = actual_date)  
+            db.session.add(new_document)
+            db.session.commit()
+            flash('Documento Guardado!!', category='success')
+            return redirect(url_for('views.documents'))
+
+    return render_template('new_document.html', user=current_user)
+
 
 #======================================================================
 #EDICIONES
@@ -216,5 +250,36 @@ def project_edit(id):
             return redirect(url_for('views.projects'))
 
     return render_template('project_edit.html', project=project, user=current_user)
+
+
+@views.route('/edit_document/<int:id>', methods=['GET', 'POST'])
+@login_required
+def edit_document(id):
+    document = Documents.query.get_or_404(id)
+    name  = request.args.get('name', None)
+
+    if request.method == 'POST':
+        doc = request.form.get('document')
+        document_title = request.form.get('document_title')
+        user_creator = request.form.get('user_creator')
+        now = datetime.now()
+        separator = '-'
+        actual_date = f'{now.year}{separator}{now.month}{separator}{now.day}'
+        print(actual_date)
+        
+        if len(doc) == 0 or len(doc) == 0:
+            flash('No ha ingresado contenido a su documento o No ha dado Nombre a su Documento!', category='error')
+        else:
+            document.user_edit = name
+            document.document = doc
+            document.document_title = document_title
+            document.date_edit = actual_date
+            db.session.add(document)
+            db.session.commit()
+            flash('Documento Editado Exitosamente!', category='success')
+            return redirect(url_for('views.documents'))
+
+
+    return render_template('edit_document.html', document=document, name=name, user=current_user)
 
 

@@ -239,7 +239,7 @@
 
  $(document).ready(function(){
       
-      $('#companiesTable').DataTable({
+      $('#documentsTable').DataTable({
         "order": [[0, "asc"]],
         "responsive":     true,
         "scrollY":        "300px",
@@ -252,20 +252,20 @@
             
             {
                 extend: 'excel',
-                text: 'Export Excel',
-                messageTop: 'Listado de Empresas',
+                text: 'Exportar Excel',
+                messageTop: 'Listado de Documentos',
                 exportOptions: { columns: ':visible',}
             },
             {
                 extend: 'csv',
-                text: 'Export CSV',
-                messageTop: 'Listado de Empresas',
+                text: 'Exportar CSV',
+                messageTop: 'Listado de Documentos',
                 exportOptions: { columns: ':visible',}
             },
             {
                 extend: 'pdf',
-                text: 'Export PDF',
-                messageTop: 'Listado de Empresas',
+                text: 'Exportar PDF',
+                messageTop: 'Listado de Documentos',
                 exportOptions: { columns: ':visible',}
             },
             {
@@ -280,7 +280,7 @@
                         .addClass( 'compact' )
                         .css( 'font-size', 'inherit' );
                 },
-                messageTop: 'Listado de Empresas',
+                messageTop: 'Listado de Documentos',
                 autoPrint: false,
                 exportOptions: {
                     columns: ':visible',

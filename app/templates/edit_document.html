@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+{% block title %}Collaborative Words - Edición de Informe{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="jumbotron">
+  <h2><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Redacción y Edición de Informe</h2>
+  <p>Comience a editar su informe y/o documento</p><hr>
+
+
+  
+  <form method="POST">
+    
+    <div class="form-group">
+      <label for="user_creator">Creador del Documento:</label>
+      <input type="text" class="form-control" id="user_creator" name="user_creator" value="{{ document.user_creator }}" disabled><br>
+    </div>
+
+    <div class="form-group">
+      <label for="editor">Editando:</label>
+      <input type="text" class="form-control" id="user_editor" name="user_editor" value="{{ name }}" disabled><br>
+    </div>
+
+    <div class="form-group">
+      <textarea class="form-control document-editor" rows="5" id="documents" name="document">{{ document.document }}</textarea>
+    </div><br>
+
+    <div class="form-group">
+      <label for="title_document">Nombre del Documento:</label>
+      <input type="text" class="form-control" id="title_document" name="document_title" value="{{ document.document_title }}" placeholder="Ingrese aquí el nombre con el que guardará el Documento"><br>
+    </div>
+
+    <div class="alert alert-info">
+      <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+    </div>
+  </form>
+</div>
+</div>
+
+
+{% endblock %}

@@ -26,3 +26,13 @@ table project_details
 + main_activity			text(300) not null
 + results				text(300) not null
 + progress_indicator	real      not null
+
+
+table documents
++ id 					integer auto_increment PK
++ document_title		text(200) not null
++ document 				text(50000) not null
++ user_creator			text(100) not null
++ date_creation			date not null
++ user_edit				text(100)
++ date_edit				date

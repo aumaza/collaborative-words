@@ -28,3 +28,13 @@ class Details(db.Model):
     main_activity = db.Column(db.String(500), nullable=False)
     results = db.Column(db.String(500), nullable=False)
     progress_indicator = db.Column(db.Float, nullable=True)
+
+
+class Documents(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    document_title = db.Column(db.String(200), nullable=False)
+    document = db.Column(db.String(50000), nullable=False)
+    user_creator = db.Column(db.String(100), nullable=False)
+    date_creation = db.Column(db.String(15), nullable=False)
+    user_edit = db.Column(db.String(100), nullable=True)
+    date_edit = db.Column(db.String(15), nullable=True)
