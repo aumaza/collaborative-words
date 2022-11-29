@@ -327,3 +327,73 @@ function nobackbutton(){
     }
     
 }
+
+
+/*
+** CREATE TEXTAREA
+*/
+$(document).ready(function(){
+
+var textarea = document.getElementById('documents');
+      sceditor.create(textarea, {
+        plugins: 'undo',
+        format: 'bbcode',
+        icons: 'material',
+        locale: 'es-ES',
+        spellcheck: true,
+        enablePasteFiltering: true,
+        print: true,
+        emoticonsEnabled: true,
+        emoticonsCompat: true,
+        emoticons:
+            {
+                // Emoticons to be included in the dropdown
+                dropdown: {
+                    ':smile:': '/static/skeleton/sceditor-3.1.1/emoticons/smile.png',
+                    ':angel:': '/static/skeleton/sceditor-3.1.1/emoticons/angel.png'
+
+                },
+                // Emoticons to be included in the more section
+                more: {
+                    ':alien:': '/static/skeleton/sceditor-3.1.1/emoticons/alien.png',
+                    ':blink:': '/static/skeleton/sceditor-3.1.1/emoticons/blink.png',
+                    ':angry:': '/static/skeleton/sceditor-3.1.1/emoticons/angry.png',
+                    ':blush:': '/static/skeleton/sceditor-3.1.1/emoticons/blush.png',
+                    ':cheerful:': '/static/skeleton/sceditor-3.1.1/emoticons/cheerful.png',
+                    ':cool:': '/static/skeleton/sceditor-3.1.1/emoticons/cool.png',
+                    ':cwy:': '/static/skeleton/sceditor-3.1.1/emoticons/cwy.png',
+                    ':devil:': '/static/skeleton/sceditor-3.1.1/emoticons/devil.png',
+                    ':dizzy:': '/static/skeleton/sceditor-3.1.1/emoticons/dizzy.png',
+                    ':ermm:': '/static/skeleton/sceditor-3.1.1/emoticons/ermm.png',
+                    ':face:': '/static/skeleton/sceditor-3.1.1/emoticons/face.png',
+                    ':getlost:': '/static/skeleton/sceditor-3.1.1/emoticons/getlost.png',
+                    ':grin:': '/static/skeleton/sceditor-3.1.1/emoticons/grin.png',
+                    ':happy:': '/static/skeleton/sceditor-3.1.1/emoticons/happy.png',
+                    ':heart:': '/static/skeleton/sceditor-3.1.1/emoticons/heart.png',
+                    ':kissing:': '/static/skeleton/sceditor-3.1.1/emoticons/kissing.png',
+                    ':laughing:': '/static/skeleton/sceditor-3.1.1/emoticons/laughing.png',
+                    ':ninja:': '/static/skeleton/sceditor-3.1.1/emoticons/ninja.png',
+                    ':pinch:': '/static/skeleton/sceditor-3.1.1/emoticons/pinch.png',
+                    ':pouty:': '/static/skeleton/sceditor-3.1.1/emoticons/pouty.png',
+                    ':sad:': '/static/skeleton/sceditor-3.1.1/emoticons/sad.png',
+                    ':shocked:': '/static/skeleton/sceditor-3.1.1/emoticons/shocked.png',
+                    ':sick:': '/static/skeleton/sceditor-3.1.1/emoticons/sick.png',
+                    ':sideways:': '/static/skeleton/sceditor-3.1.1/emoticons/sideways.png',
+                    ':silly:': '/static/skeleton/sceditor-3.1.1/emoticons/silly.png',
+                    ':sleeping:': '/static/skeleton/sceditor-3.1.1/emoticons/sleeping.png',
+                    ':tongue:': '/static/skeleton/sceditor-3.1.1/emoticons/tongue.png',
+                    ':unsure:': '/static/skeleton/sceditor-3.1.1/emoticons/unsure.png',
+                    ':w00t:': '/static/skeleton/sceditor-3.1.1/emoticons/w00t.png',
+                    ':wassat:': '/static/skeleton/sceditor-3.1.1/emoticons/wassat.png',
+                    ':whistling:': '/static/skeleton/sceditor-3.1.1/emoticons/whistling.png',
+                    ':wink:': '/static/skeleton/sceditor-3.1.1/emoticons/wink.png',
+                    ':wub:': '/static/skeleton/sceditor-3.1.1/emoticons/wub.png'
+
+                }
+                
+            },
+
+        style: 'minified/themes/content/default.min.css'
+
+      });
+});

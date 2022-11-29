@@ -22,8 +22,9 @@
           <td align="center">{{ pro.project_name }}</td>
           <td align="center">{{ pro.objetives }}</td>
           <td class='text-nowrap' align="center">
-              <a href="/project_edit/{{ pro.id }}" class="btn btn-default "><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar</a>
-              <a href="/project_details/{{ pro.id }}" class="btn btn-default "><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Detalles</a>
+              <a href="/project_edit/{{ pro.id }}" class="btn btn-primary "><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar</a>
+              <a href="/project_details/{{ pro.id }}" class="btn btn-warning "><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Detalles</a>
+              <a href="/project_indicators/{{ pro.id }}" class="btn btn-success "><span class="glyphicon glyphicon-signal" aria-hidden="true"></span> Indicadores</a>
           </td>
         </tr>
       {% endfor %}

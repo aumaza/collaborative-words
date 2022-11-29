@@ -34,7 +34,10 @@
     <script src="{{ url_for('static', filename='skeleton/sceditor-3.1.1/minified/icons/monocons.js') }}"></script>
     <script src="{{ url_for('static', filename='skeleton/sceditor-3.1.1/minified/icons/material.js') }}"></script>
     <script src="{{ url_for('static', filename='skeleton/sceditor-3.1.1/minified/formats/bbcode.js') }}"></script>
+    <script src="{{ url_for('static', filename='skeleton/sceditor-3.1.1/minified/jquery.sceditor.bbcode.min.js') }}"></script>
     <script src="{{ url_for('static', filename='skeleton/sceditor-3.1.1/minified/plugins/undo.js') }}"></script>
+    <script src="{{ url_for('static', filename='skeleton/sceditor-3.1.1/minified/plugins/alternative-list.js') }}"></script>
+    <script src="{{ url_for('static', filename='skeleton/sceditor-3.1.1/minified/plugins/format.js') }}"></script>
     <script src="{{ url_for('static', filename='skeleton/sceditor-3.1.1/languages/es.js') }}"></script>
 
     
@@ -146,20 +149,7 @@
 
 <script type="text/javascript" src="{{ url_for('static', filename='skeleton/js/app.js') }}"></script>
 
-<script>
-      var textarea = document.getElementById('documents');
-      sceditor.create(textarea, {
-        plugins: 'undo',
-        format: 'bbcode',
-        icons: 'material',
-        locale: 'es-ES',
-        spellcheck: true,
-        enablePasteFiltering: true,
-        print: true,
-        style: 'minified/themes/content/default.min.css'
 
-      });
-</script>
 
 </body>
 </html>

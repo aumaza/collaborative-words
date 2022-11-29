@@ -29,6 +29,7 @@ table project_details
 
 
 table documents
+---------------------------------------------------
 + id 					integer auto_increment PK
 + document_title		text(200) not null
 + document 				text(50000) not null
@@ -36,3 +37,14 @@ table documents
 + date_creation			date not null
 + user_edit				text(100)
 + date_edit				date
+
+
+table sirhu_indicators
+----------------------------------------------------
++ id 					integer auto_increment PK
++ id_project			integer not null
++ subproject_name		text(500) not null
++ objetives				text(500) not null
++ activity 				text(500) not null
++ percent				real	  not null
++ stage					text(500) not null
