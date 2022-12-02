@@ -38,3 +38,23 @@ class Documents(db.Model):
     date_creation = db.Column(db.String(15), nullable=False)
     user_edit = db.Column(db.String(100), nullable=True)
     date_edit = db.Column(db.String(15), nullable=True)
+
+
+class SirhuIndicators(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id_project = db.Column(db.Integer, nullable=False)
+    subproject_name = db.Column(db.String(500), nullable=False)
+    objetives = db.Column(db.String(500), nullable=False)
+    activity = db.Column(db.String(500), nullable=True)
+    percent = db.Column(db.Float, nullable=False)
+    stage = db.Column(db.String(500), nullable=False)
+    stage_percent = db.Column(db.Float, nullable=False)
+    indicator_a = db.Column(db.Float)
+    indicator_b = db.Column(db.Float)
+    indicator_c = db.Column(db.Float)
+    indicator_d = db.Column(db.Float)
+    indicator_hope = db.Column(db.Float)
+    indicator_get = db.Column(db.Float)
+    month = db.Column(db.String(20), nullable=False)
+    year = db.Column(db.String(4), nullable=False)
+    month_year_per = db.Column(db.Float)

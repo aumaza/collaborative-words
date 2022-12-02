@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>{% block title %}Collaborative Words and Projects [ Home ]{% endblock %}</title>
+  <title>{% block title %}Collaborative Works and Projects [ Home ]{% endblock %}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -79,9 +79,9 @@
   <div class="container-fluid">
     <div class="navbar-header">
     {% if user.is_authenticated %}
-      <a class="navbar-brand" href="/main"><span class="glyphicon glyphicon-pencil"></span> Collaborative Words</a>
+      <a class="navbar-brand" href="/main"><span class="glyphicon glyphicon-pencil"></span> Collaborative Works</a>
     {% else %}
-    <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-pencil"></span> Collaborative Words</a>
+    <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-pencil"></span> Collaborative Works</a>
     {% endif %}
     </div>
     

@@ -1,0 +1,90 @@
+{% extends "index.html" %}
+{% block title %}Collaborative Works - Sirhu Indicadores - Seguimiento de Carga{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+  
+  <div class="jumbotron">
+    <h2><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Agregar Nuevo Registro de Indicadores SIRHU</h2>      
+    <p>Seguimiento de Carga</p><hr>
+    
+     <form method="POST">
+        
+        <div class="form-group">
+          <label for="subproject">Subproyecto:</label>
+          <input type="text" class="form-control" id="subproject" name="subproject">
+        </div>
+         <div class="form-group">
+          <label for="objetives">Objetivos:</label>
+          <textarea class="form-control" rows="5" id="objetives" name="objetives"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="activity">Actividad:</label>
+          <input type="text" class="form-control" id="activity" name="activity">
+        </div>
+        <div class="form-group">
+          <label for="percent">Porcentaje:</label>
+          <input type="text" class="form-control" id="percent" name="percent">
+        </div>
+        <div class="form-group">
+          <label for="stage">Etapa:</label>
+          <input type="text" class="form-control" id="stage" name="stage">
+        </div>
+         <div class="form-group">
+          <label for="stage_percent">Etapa (Porcentaje):</label>
+          <input type="text" class="form-control" id="stage_percent" name="stage_percent">
+        </div>
+        <div class="form-group">
+          <label for="inst_percent_def">Institución Cierre Definitivo (Porcentaje):</label>
+          <input type="text" class="form-control" id="inst_percent_def" name="inst_percent_def">
+        </div>
+        <div class="form-group">
+          <label for="inst_percent_pen">Institución Cierre Pendiente (Porcentaje):</label>
+          <input type="text" class="form-control" id="inst_percent_pen" name="inst_percent_pen">
+        </div>
+        <div class="form-group">
+          <label for="inst_percent_critic_error">Institución Errores Criticos (Porcentaje):</label>
+          <input type="text" class="form-control" id="inst_percent_def" name="inst_percent_def">
+        </div>
+        <div class="form-group">
+          <label for="inst_percent_no_data">Institución sin remitir datos (Porcentaje):</label>
+          <input type="text" class="form-control" id="inst_percent_no_data" name="inst_percent_no_data">
+        </div>
+        <div class="form-group">
+          <label for="indicator_percent_hope">Indicador Esperado (Porcentaje):</label>
+          <input type="text" class="form-control" id="indicator_percent_hope" name="indicator_percent_hope">
+        </div>
+         <div class="form-group">
+          <label for="month">Mes:</label>
+          <select class="form-control" id="month" name="month">
+            <option value="" selected disabled>Seleccionar</option>
+            <option value="Enero">Enero</option>
+            <option value="Febrero">Febrero</option>
+            <option value="Marzo">Marzo</option>
+            <option value="Abril">Abril</option>
+            <option value="Mayo">Mayo</option>
+            <option value="Junio">Junio</option>
+            <option value="Julio">Julio</option>
+            <option value="Agosto">Agosto</option>
+            <option value="Septiembre">Septiembre</option>
+            <option value="Octubre">Octubre</option>
+            <option value="Noviembre">Noviembre</option>
+            <option value="Diciembre">Diciembre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="year">Año:</label>
+          <input type="text" class="form-control" id="year" name="year" maxlength="4">
+        </div>
+        
+        
+        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</button>
+      </form> 
+    
+  </div>
+        
+</div>
+
+{% endblock %}

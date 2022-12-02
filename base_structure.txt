@@ -48,3 +48,13 @@ table sirhu_indicators
 + activity 				text(500) not null
 + percent				real	  not null
 + stage					text(500) not null
++ stage_percent			real not null
++ indicator_a			real
++ indicator_b			real
++ indicator_c			real
++ indicator_d			real
++ month					text(20) not null
++ year					text(4) not null
++ month_year_per		real
+
+

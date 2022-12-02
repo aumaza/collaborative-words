@@ -1,0 +1,65 @@
+{% extends "index.html" %}
+{% block title %}Collaborative Works - Sirhu Indicadores{% endblock %}
+
+{% block content %}
+  
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h2><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Indicadores del Proyecto {{ project.project_name }}</h2><hr>
+      <a href="/new_indicator/{{ project.id }}"><button class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo Indicador</button></a><hr>
+
+  <table class="display compact" style="width:100%" id="sirhuIndicatorsTable">
+    <thead>
+      <tr>
+        <th class='text-nowrap text-center'>Subproyecto</th>
+        <th class='text-nowrap text-center'>Objetivos</th>
+        <th class='text-nowrap text-center'>Actividad</th>
+        <th class='text-nowrap text-center'>Porcentaje</th>
+        <th class='text-nowrap text-center'>Etapa</th>
+        <th class='text-nowrap text-center'>Etapa Porcentaje</th>
+        <th class='text-nowrap text-center'>Inst. Cierre Definitivo (%)</th>
+        <th class='text-nowrap text-center'>Inst. Cierre Pendiente (%)</th>
+        <th class='text-nowrap text-center'>Inst. Errores Críticos (%)</th>
+        <th class='text-nowrap text-center'>Inst. no Remiten Datos (%)</th>
+        <th class='text-nowrap text-center'>Indicador Esperado (%)</th>
+        <th class='text-nowrap text-center'>Indicador Obtenido (%)</th>
+        <th class='text-nowrap text-center'>Mes</th>
+        <th class='text-nowrap text-center'>Año</th>
+        <th class='text-nowrap text-center'>Porcentaje Total</th>
+        <th class='text-nowrap text-center'>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for sir in sirhu %}
+        <tr>
+          <td align="center">{{ sir.subproject_name }}</td>
+          <td align="center">{{ sir.objetives }}</td>
+          <td align="center">{{ sir.activity }}</td>
+          <td align="center">{{ sir.percent }}</td>
+          <td align="center">{{ sir.stage }}</td>
+          <td align="center">{{ sir.stage_percent }}</td>
+          <td align="center">{{ sir.indicator_a }}</td>
+          <td align="center">{{ sir.indicator_b }}</td>
+          <td align="center">{{ sir.indicator_c }}</td>
+          <td align="center">{{ sir.indicator_d }}</td>
+          <td align="center">{{ sir.indicator_hope }}</td>
+          <td align="center">{{ sir.indicator_get }}</td>
+          <td align="center">{{ sir.month }}</td>
+          <td align="center">{{ sir.year }}</td>
+          <td align="center">{{ sir.motn_year_per }}</td>
+          <td class='text-nowrap' align="center">
+              
+              <a href="/sirhu_indicator_edit/{{ sirhu.id }}" class="btn btn-primary "><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar</a>
+              
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table><hr>
+  <div class="alert alert-info"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span> <strong>Cantidad de Registros:</strong> {{ count }} </div><hr>
+
+</div>
+</div>
+
+
+{% endblock %}

@@ -13,7 +13,7 @@ import shutil
 
 
 views = Blueprint('views', '__name__')
-from .models import User, Projects, Details, Documents
+from .models import User, Projects, Details, Documents, SirhuIndicators
 
 @views.route('/')
 @login_required
@@ -64,8 +64,15 @@ def documents():
     return render_template('documents.html', count=count, documents=documents, user=current_user)
 
 
+@views.route('/project_indicators/<int:id>', methods=['GET', 'POST'])
+@login_required
+def indicators(id):
 
-
+    if id == 1:
+        project = Projects.query.get_or_404(id)
+        sirhu = SirhuIndicators.query
+        count = SirhuIndicators.query.count()
+        return render_template('sirhu_indicators.html', sirhu=sirhu, project=project, count=count, user=current_user)
 
 
 
@@ -125,7 +132,7 @@ def new_document(name):
         document = request.form.get('document')
         document_title = request.form.get('document_title')
         now = datetime.now()
-        separator = '/'
+        separator = '-'
         actual_date = f'{now.year}{separator}{now.month}{separator}{now.day}'
         print(actual_date)
 
@@ -139,6 +146,47 @@ def new_document(name):
             return redirect(url_for('views.documents'))
 
     return render_template('new_document.html', user=current_user)
+
+
+@views.route('/new_indicator/<int:id>', methods=['GET', 'POST'])
+@login_required
+def new_indicator(id):
+
+    if id == 1:
+        if request.method == 'POST':
+            stage = request.form.get('stage')
+            if stage is None:
+                flash('Debe selecionar una opción!', category='error')
+            else:
+                if stage == 'a':
+                    if request.method == 'POST':
+                        subproject = request.form.get('subproject')
+                        objetives = request.form.get('objetives')
+                        activity = request.form.get('activity')
+                        percent = request.form.get('percent')
+                        stage = request.form.get('stage')
+                        stage_percent = request.form.get('stage_percent')
+                        indicator_a = request.form.get('inst_percent_def')
+                        indicator_b = request.form.get('inst_percent_pen')
+                        indicator_c = request.form.get('inst_percent_def')
+                        indicator_d = request.form.get('inst_percent_no_data')
+                        indicator_hope = request.form.get('indicator_percent_hope')
+                        month = request.form.get('month')
+                        year = request.form.get('year')
+                        
+                        if subproject is None or objetives is None or activity is None or percent is None or stage is None or stage_percent is None or indicator_a is None or indicator_b is None or indicator_c is None or indicator_d is None or indicator_hope is None or month is None or year is None:
+                            flash('Hay campos sin completar!', category='error')
+                        else:
+                            indicator_get = indicator_a + indicator_d
+                            new_indicator = SirhuIndicators(id_project = id, subproject = subproject, objetives = objetives, percent = percent, stage = stage, stage_percent = stage_percent, indicator_a = indicador_a, indicator_b = indicator_b, indicator_c = indicator_c, indicator_d = indicator_d, indicator_hope = indicator_hope, indicator_get = indicator_get, month = month, year = year)
+                            db.session.add(new_indicator)
+                            db.session.commit()
+                            flash('Indicador Guardado Exitosamente!', category='success')
+                            return redirect(url_for('views.projects'))
+
+                return render_template('seguimiento_carga.html', user=current_user)
+
+    return render_template('stage_selector.html', user=current_user)
 
 
 #======================================================================
