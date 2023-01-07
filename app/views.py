@@ -145,7 +145,7 @@ def new_document(name):
             flash('Documento Guardado!!', category='success')
             return redirect(url_for('views.documents'))
 
-    return render_template('new_document.html', user=current_user)
+    return render_template('new_document.html', name=name, user=current_user)
 
 
 @views.route('/new_indicator/<int:id>', methods=['GET', 'POST'])

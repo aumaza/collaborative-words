@@ -476,3 +476,15 @@ var textarea = document.getElementById('documents');
 
       });
 });
+
+
+
+/*
+** CREATE TEXTAREA
+*/
+$(document).ready(function(){
+
+//var textarea = document.getElementById('editor1');
+CKEDITOR.replace( 'editor1' );
+
+});
