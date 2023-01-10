@@ -77,7 +77,7 @@
     });
 
 
-// ESTRUCTURA TABLE SERVICIOS
+// ESTRUCTURA TABLE  PROYECTOS
 
  $(document).ready(function(){
       
@@ -156,10 +156,13 @@
     });
 
 
- // ESTRUCTURA TABLE PAGOS
+ // ESTRUCTURA TABLE  DETALLES
 
  $(document).ready(function(){
       
+      var project = document.getElementById('project').innerText;
+      console.log(project);
+
       $('#detailsTable').DataTable({
         "order": [[0, "asc"]],
         "responsive":     true,
@@ -174,19 +177,19 @@
             {
                 extend: 'excel',
                 text: 'Exportar Excel',
-                messageTop: 'Listado de Detalles de Proyecto',
+                messageTop: 'Listado de Detalles de Proyecto ' + project,
                 exportOptions: { columns: ':visible',}
             },
             {
                 extend: 'csv',
                 text: 'Exportar CSV',
-                messageTop: 'Listado de Detalles de Proyecto',
+                messageTop: 'Listado de Detalles de Proyecto ' + project,
                 exportOptions: { columns: ':visible',}
             },
             {
                 extend: 'pdf',
                 text: 'Exportar PDF',
-                messageTop: 'Listado de Detalles de Proyecto',
+                messageTop: 'Listado de Detalles de Proyecto ' + project,
                 exportOptions: { columns: ':visible',}
             },
             {
@@ -201,7 +204,7 @@
                         .addClass( 'compact' )
                         .css( 'font-size', 'inherit' );
                 },
-                messageTop: 'Listado de Detalles de Proyecto',
+                messageTop: 'Listado de Detalles de Proyecto ' + project,
                 autoPrint: false,
                 exportOptions: {
                     columns: ':visible',
@@ -235,7 +238,7 @@
     });
 
 
- // ESTRUCTURA TABLE EMPRESAS
+ // ESTRUCTURA TABLE DOCUMENTOS
 
  $(document).ready(function(){
       

@@ -1,11 +1,12 @@
 {% extends "index.html" %}
-{% block title %}Collaborative Works - Detalles de Proyecto{% endblock %}
+{% block title %}Collaborative Works - Detalles del Proyecto {{ project.project_name }}{% endblock %}
 
 {% block content %}
   
   <div class="container-fluid">
     <div class="jumbotron">
-      <h2><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Detalles del Proyecto {{ project.project_name }}</h2><hr>
+      <h2 ><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Detalles del Proyecto </h2>
+      <p id="project">{{ project.project_name }}</p><hr>
       <a href="/new_details/{{ project.id }}"><button class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo Detalle</button></a><hr>
 
   <table class="display compact" style="width:100%" id="detailsTable">

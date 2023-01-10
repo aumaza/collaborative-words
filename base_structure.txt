@@ -1,9 +1,9 @@
 table usuarios
 ---------------------------------------------------
-+ id 					integer auto_increment PK
++ id 						integer auto_increment PK
 + name					text(100) not null
 + user					text(100) not null
-+ password				text(74) not null
++ password			text(74) not null
 + email					text(100) not null
 + role					integer not null
 + avatar				text(100) null
@@ -11,50 +11,50 @@ table usuarios
 
 table projects
 ---------------------------------------------------
-+ id					integer auto_increment PK
++ id										integer auto_increment PK
 + project_name			text(300) not null
-+ objetives				text(500) not null
++ objetives						text(500) not null
 
 
 table project_details
 ---------------------------------------------------
-+ id					integer auto_increment PK
-+ id_project			integer not null
-+ leader				text(100) not null
-+ contributor			text(100) not null
-+ task_detail			text(300) not null
-+ main_activity			text(300) not null
-+ results				text(300) not null
++ id													  integer auto_increment PK
++ id_project								  integer not null
++ leader										  text(100) not null
++ contributor								  text(100) not null
++ task_detail								  text(300) not null
++ main_activity							  text(300) not null
++ results										  text(300) not null
 + progress_indicator	real      not null
 
 
 table documents
 ---------------------------------------------------
-+ id 					integer auto_increment PK
++ id 								integer auto_increment PK
 + document_title		text(200) not null
 + document 				text(50000) not null
 + user_creator			text(100) not null
-+ date_creation			date not null
-+ user_edit				text(100)
-+ date_edit				date
++ date_creation		date not null
++ user_edit					text(100)
++ date_edit					date
 
 
 table sirhu_indicators
 ----------------------------------------------------
-+ id 					integer auto_increment PK
-+ id_project			integer not null
++ id 									integer auto_increment PK
++ id_project					integer not null
 + subproject_name		text(500) not null
-+ objetives				text(500) not null
-+ activity 				text(500) not null
-+ percent				real	  not null
-+ stage					text(500) not null
++ objetives						text(500) not null
++ activity 							text(500) not null
++ percent						real	  not null
++ stage								text(500) not null
 + stage_percent			real not null
-+ indicator_a			real
-+ indicator_b			real
-+ indicator_c			real
-+ indicator_d			real
-+ month					text(20) not null
-+ year					text(4) not null
++ indicator_a					real
++ indicator_b					real
++ indicator_c					real
++ indicator_d					real
++ month							text(20) not null
++ year								text(4) not null
 + month_year_per		real
 
 
